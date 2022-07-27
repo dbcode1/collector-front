@@ -1,0 +1,94 @@
+
+html { color: black; }
+
+body { max-width: 1400px; margin: 0 auto; font-size: 16px; }
+
+
+/* FONTS */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Oswald:wght@300;500&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital@1&display=swap');
+
+
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 200ms;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 200ms;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transition: opacity 800ms;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transition: opacity 800ms;
+  }
+}
+
+.my-masonry-grid {
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
+  display: flex;
+  margin: 10px 30px 100px 0; /* gutter size offset */
+  width: auto;
+}
+.my-masonry-grid_column {
+  padding-left: 30px; /* gutter size */
+  background-clip: padding-box;
+}
+
+/* Style your items */
+.my-masonry-grid_column > div { 
+}
+
+h1 { font-weight: 400; }
+
+
+.Modal {
+  position:fixed;
+        top:50%;
+        left:50%;
+        z-index: 2000;
+        transform:translate(-50%,-50%);
+        box-sizing:border-box;
+        width:600px;
+       border: solid 2px rgb(202, 211, 221);
+        background-color: white;
+        border-radius: 8px;
+        padding: 40px;
+        
+}
+
+
+.showNav {
+  opacity: 1;
+  transition: opacity .5s ease;
+}
+
+.hideNav {
+  opacity: 0;
+  
+}
