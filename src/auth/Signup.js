@@ -33,9 +33,10 @@ const Signup = () => {
     setValues({ ...values, buttonText: "Submitting" });
     axios({
       method: "POST",
-      url: `${process.env.REACT_APP_API}/signup`,
+      url: `${process.env.REACT_APP_API}/api/signup`,
       data: { name, email, password },
     })
+      .then((res) => res.json())
       .then((response) => {
         console.log("SIGNUP SUCCESS", response);
         setValues({
@@ -46,6 +47,7 @@ const Signup = () => {
           buttonText: "Submitted",
         });
         toast.success(response.data.message);
+        console.log("signup successful");
       })
       .catch((error) => {
         console.log("SIGNUP ERROR", error);

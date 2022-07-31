@@ -35,7 +35,7 @@ const Reset = ({match}) => {
     setValues({...values, buttonText: 'Submitting'})
     axios({
       method: 'PUT', 
-      url: `${process.env.REACT_APP_API}/reset-password`,
+      url: `${process.env.REACT_APP_API}/api/reset-password`,
       data: {newPassword, resetPasswordLink:token}
     })
     .then(response => {
@@ -55,7 +55,7 @@ const Reset = ({match}) => {
     <form>
       <div className="form-group">
         <label className="text-muted">Password</label>
-        <input className="form-control" type="password" value={newPassword} onChange={handleChange} placeholder="type new password " required  value={newPassword}></input>
+        <input className="form-control" type="password"  onChange={handleChange} placeholder="type new password " required  value={newPassword}></input>
       </div>
       <div>
         <button className=" btn btn-primary" onClick={handleSubmit}>{buttonText}</button>

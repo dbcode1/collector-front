@@ -1,3 +1,1 @@
-// artsy needs new keywords
-// is met working
-// loading icon fade in out
+change url for email activation to netlify

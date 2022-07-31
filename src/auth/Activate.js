@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Layout from "../main/Layout";
 import axios from "axios";
+import "dotenv/config";
 import jwt from "jsonwebtoken";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
@@ -26,7 +27,7 @@ const Activate = ({ match }) => {
     event.preventDefault();
     axios({
       method: "Post",
-      url: "http://localhost:8000/api/account-activation",
+      url: `${process.env.REACT_APP_API}/api/account-activation`,
       data: { token },
     })
       .then((response) => {
