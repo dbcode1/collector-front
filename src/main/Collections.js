@@ -105,7 +105,7 @@ const Collections = (props) => {
   const addCollections = (e) => {
     axios({
       method: "POST",
-      url: `http://localhost:8000/api/collections`,
+      url: `http://localhost:8000/collections`,
       params: { q: values.title },
       headers: {
         Authorization: `Bearer ${token}`,

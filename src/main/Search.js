@@ -77,7 +77,7 @@ const Search = ({ history, match }) => {
 
     await axios({
       method: "GET",
-      url: `${process.env.REACT_APP_API}/collections/titles`,
+      url: `${process.env.REACT_APP_API}/api/collections/titles`,
       params: {
         id: user,
       },
