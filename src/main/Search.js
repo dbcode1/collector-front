@@ -91,8 +91,8 @@ const Search = ({ history, match }) => {
   };
 
   const getArt = async (searchTerm) => {
+    console.log("get Art");
     setValues({ ...values, loading: true });
-    console.log("get art", searchTerm);
 
     try {
       const callSearchArt = await axios({
