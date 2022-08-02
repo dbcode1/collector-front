@@ -34,7 +34,7 @@ const Signin = ({ history }) => {
 
     axios({
       method: "Post",
-      url: `${process.env.REACT_APP_API}/api/signin`,
+      url: `${process.env.REACT_APP_API}/signin`,
       data: { email, password },
     })
       .then((response) => {

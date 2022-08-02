@@ -97,7 +97,7 @@ const Search = ({ history, match }) => {
     try {
       const callSearchArt = await axios({
         method: "GET",
-        url: `${process.env.REACT_APP_API}/api/search`,
+        url: `${process.env.REACT_APP_API}/search`,
         params: { q: searchTerm },
         headers: {
           Authorization: `Bearer ${token}`,
