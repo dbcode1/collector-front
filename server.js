@@ -5,6 +5,7 @@ const app = express();
 const cors = require("cors");
 
 app.use(compression());
+// code help
 app.use(
   cors({
     origin: "*",
