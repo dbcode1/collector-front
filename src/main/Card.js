@@ -25,7 +25,7 @@ const Card = ({ titles, values, item, setValues, expandCard }) => {
 
     await axios({
       method: "POST",
-      url: `http://localhost:8000/api/cards`,
+      url: `${process.env.REACT_APP_API}/api/cards`,
       params: {
         title: children[0].innerHTML,
         img: imgFullURL,

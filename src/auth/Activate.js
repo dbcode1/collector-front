@@ -27,7 +27,7 @@ const Activate = ({ match }) => {
     event.preventDefault();
     axios({
       method: "Post",
-      url: `${process.env.REACT_APP_API}/account-activation`,
+      url: `${process.env.REACT_APP_API}/api/account-activation`,
       data: { token },
     })
       .then((response) => {
@@ -36,8 +36,9 @@ const Activate = ({ match }) => {
         toast.success(response.data.message);
       })
       .catch((error) => {
-        console.log("SIGNUP ERROR", error.response.data.error);
-        toast.error(error.response.data.error);
+        console.log("SIGNUP ERROR", error);
+
+        toast.error(error);
       });
   };
 

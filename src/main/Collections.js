@@ -105,7 +105,7 @@ const Collections = (props) => {
   const addCollections = (e) => {
     axios({
       method: "POST",
-      url: `http://localhost:8000/collections`,
+      url: `${process.env.REACT_APP_API}/api/collections`,
       params: { q: values.title },
       headers: {
         Authorization: `Bearer ${token}`,
@@ -126,7 +126,7 @@ const Collections = (props) => {
     const user = isAuth()._id;
     await axios({
       method: "GET",
-      url: `${process.env.REACT_APP_API}/collections`,
+      url: `${process.env.REACT_APP_API}/api/collections`,
       params: {
         id: user,
       },
@@ -150,7 +150,7 @@ const Collections = (props) => {
       console.log("title", title);
       axios({
         method: "DELETE",
-        url: `${process.env.REACT_APP_API}/collections/delete`,
+        url: `${process.env.REACT_APP_API}/api/collections/delete`,
         data: {
           title,
           id: user._id,

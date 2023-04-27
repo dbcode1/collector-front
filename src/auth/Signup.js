@@ -28,15 +28,15 @@ const Signup = () => {
   };
 
   const handleSubmit = (event) => {
-    console.log(".env", process.env.REACT_APP_API);
     event.preventDefault();
+    
+
     setValues({ ...values, buttonText: "Submitting" });
     axios({
       method: "POST",
       url: `${process.env.REACT_APP_API}/api/signup`,
       data: { name, email, password },
     })
-      .then((res) => res.json())
       .then((response) => {
         console.log("SIGNUP SUCCESS", response);
         setValues({
