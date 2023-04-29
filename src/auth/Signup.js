@@ -29,7 +29,6 @@ const Signup = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    
 
     setValues({ ...values, buttonText: "Submitting" });
     axios({
@@ -73,7 +72,7 @@ const Signup = () => {
       <DataField>
         <label>Password</label>
         <input
-          type="text"
+          type="password"
           value={password}
           onChange={handleChange("password")}
         ></input>
