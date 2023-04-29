@@ -8,7 +8,7 @@ import "react-toastify/dist/ReactToastify.min.css";
 
 const Activate = ({ match }) => {
   const [values, setValues] = useState({
-    name: "Dan",
+    name: "",
     token: "",
     show: true,
   });
