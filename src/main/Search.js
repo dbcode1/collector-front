@@ -103,13 +103,14 @@ const Search = ({ history, match }) => {
           Authorization: `Bearer ${token}`,
         },
       });
-
+      console.log("art data", callSearchArt.data)
       // save data to localStorage
       localStorage.setItem("entries", JSON.stringify(callSearchArt.data));
 
       const storedData = JSON.parse(localStorage.getItem("entries"));
 
       setValues({ ...values, artData: storedData });
+
     } catch (error) {
       console.log("GET ART ERROR", error.response);
       toast.error(error.response.data.message);
