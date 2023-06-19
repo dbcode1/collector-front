@@ -33,6 +33,7 @@ const Search = ({ history, match }) => {
     searchTerm: "",
   });
 
+
   const [titles, setTitles] = useState("");
   const [show, setShow] = useState(false);
 
@@ -141,7 +142,7 @@ const Search = ({ history, match }) => {
         change={onChangeValue}
         term={values.searchTerm}
         submit={onSubmitValue}
-        inputTitle="Enter artist fullname"
+        inputTitle="Enter Artist Full Name"
         button="Search"
       />
       {values.loading && (
