@@ -49,9 +49,9 @@ const Signup = () => {
         console.log("signup successful");
       })
       .catch((error) => {
-        console.log("SIGNUP ERROR", error);
+        console.log("SIGNUP ERROR", error.response.data);
         setValues({ ...values, buttonText: "Submit" });
-        toast.error(error.response);
+        toast.error(error.response.data.error);
       });
   };
 

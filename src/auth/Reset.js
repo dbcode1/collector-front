@@ -17,7 +17,7 @@ const Reset = ({match}) => {
   })
 
   useEffect(() => {
-    let token = match.params.token
+    
     let {name} = jwt.decode(token)
     if(token){
       setValues({...values, name, token})
