@@ -33,7 +33,6 @@ const Search = ({ history, match }) => {
     searchTerm: "",
   });
 
-
   const [titles, setTitles] = useState("");
   const [show, setShow] = useState(false);
 
@@ -94,7 +93,7 @@ const Search = ({ history, match }) => {
   const getArt = async (searchTerm) => {
     console.log("get Art");
     setValues({ ...values, loading: true });
-
+    console.log(token);
     try {
       const callSearchArt = await axios({
         method: "GET",
@@ -104,14 +103,13 @@ const Search = ({ history, match }) => {
           Authorization: `Bearer ${token}`,
         },
       });
-      console.log("art data", callSearchArt.data)
+      //console.log("art data", callSearchArt.data);
       // save data to localStorage
       localStorage.setItem("entries", JSON.stringify(callSearchArt.data));
 
       const storedData = JSON.parse(localStorage.getItem("entries"));
 
       setValues({ ...values, artData: storedData });
-
     } catch (error) {
       console.log("GET ART ERROR", error.response);
       toast.error(error.response.data.message);

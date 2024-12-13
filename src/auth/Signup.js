@@ -31,6 +31,7 @@ const Signup = () => {
     event.preventDefault();
 
     setValues({ ...values, buttonText: "Submitting" });
+    console.log(process.env.REACT_APP_API);
     axios({
       method: "POST",
       url: `${process.env.REACT_APP_API}/api/signup`,

@@ -1,7 +1,7 @@
-import React, {useState, Fragment, useEffect} from 'react'
-import styled from 'styled-components'
-import Button from '../styledComponents/Button'
-import { SelectArrows } from "@styled-icons/entypo/SelectArrows"
+import React, { useState, Fragment, useEffect } from "react";
+import styled from "styled-components";
+import Button from "../styledComponents/Button";
+import { SelectArrows } from "@styled-icons/entypo/SelectArrows";
 
 const OpenClose = styled.span`
   position: fixed;
@@ -11,19 +11,19 @@ const OpenClose = styled.span`
   padding: 2px;
   border-radius: 150px;
   background-color: #ccf5ff;
-`
-const Arrows = styled(SelectArrows) `
+`;
+const Arrows = styled(SelectArrows)`
   width: 30px;
   height: 30px;
   color: #b9b7b7;
-  transition: .25s ease color;
+  transition: 0.25s ease color;
   display: inline-block;
   padding: 0;
   transition: color ease 0.5s;
-  &:hover { 
+  &:hover {
     color: blue;
   }
-`
+`;
 
 const SearchForm = styled.form`
 text-align: center;
@@ -39,45 +39,57 @@ right: 0;
 z-index: 100;
 background-color: #fff;
 box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
-`
+`;
 
 const SearchInput = styled.input`
-border: none;
-width: 50vw;
-text-align: center;
-:focus {
+  border: none;
+  width: 50vw;
+  text-align: center;
+  :focus {
     outline: none;
-}
-`
+  }
+`;
 
 // window.onload=function(){
 //   document.getElementById("input").click();
 // };
 
-const SearchBar = ({change, submit, inputTitle, button}) => {
-  const [showNav, setShowNav] = useState(true)
+const SearchBar = ({ change, submit, inputTitle, button }) => {
+  const [showNav, setShowNav] = useState(true);
 
   const hideNav = () => {
-    setShowNav(!showNav)
-  }
-
+    setShowNav(!showNav);
+  };
+  const handleFocus = (event) => event.target.select();
   const onFieldChange = (e) => {
     const term = e.target.value;
-    console.log('auto', e.target.value)
-    change(term)
-  }
+    console.log("auto", e.target.value);
+    change(term);
+  };
   return (
     <Fragment>
       <OpenClose onClick={hideNav}>
-        <Arrows>
-        </Arrows>
+        <Arrows></Arrows>
       </OpenClose>
-      <SearchForm autocomplete="off" onSubmit={submit} className={showNav ? 'showNav' : 'hideNav'}>
-        <SearchInput id="input" type="text" placeholder={inputTitle} name="search"  onChange={onFieldChange}></SearchInput>
-        <Button type="submit" value="Submit">{button}</Button>
+      <SearchForm
+        autocomplete="off"
+        onSubmit={submit}
+        className={showNav ? "showNav" : "hideNav"}
+      >
+        <SearchInput
+          id="input"
+          type="text"
+          placeholder={inputTitle}
+          name="search"
+          onChange={onFieldChange}
+          onFocus={handleFocus}
+        ></SearchInput>
+        <Button type="submit" value="Submit">
+          {button}
+        </Button>
       </SearchForm>
     </Fragment>
-  )
-}
+  );
+};
 
-export default SearchBar
+export default SearchBar;
