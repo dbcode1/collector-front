@@ -24,7 +24,7 @@ const Forgot = ({ history }) => {
     axios({
       method: "PUT",
       url: `${process.env.REACT_APP_API}/api/forgot-password`,
-      data: { email }
+      data: { email },
     })
       .then((response) => {
         console.log("Forgot Password SUCCESS", response);
@@ -32,9 +32,10 @@ const Forgot = ({ history }) => {
         setValues({ ...values, buttonText: "Requested" });
       })
       .catch((error) => {
-         console.log("RESET ERROR", error);
-        setValues({ ...values, buttonText: "Submit" });
         toast.error(error);
+        console.log("RESET ERROR", error);
+
+        setValues({ ...values, buttonText: "Submit" });
       });
   };
 

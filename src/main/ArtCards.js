@@ -39,7 +39,7 @@ const ArtCards = ({ data, setValues, titles, values }) => {
       setValues({ ...values, expanded: !values.expanded, selectedImg: img });
     }
   };
-  console.log(data);
+  
   return (
     <Fragment>
       <SearchResults>
@@ -48,6 +48,7 @@ const ArtCards = ({ data, setValues, titles, values }) => {
           className="my-masonry-grid"
           columnClassName="my-masonry-grid_column"
         >
+          {console.log("DATA", data)}
           {data &&
             data.map((item, i) => {
               if (item) {

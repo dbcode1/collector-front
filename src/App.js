@@ -8,7 +8,6 @@ import ReactModal from "react-modal";
 import Fade from "./Fade";
 import "./index.css";
 const Container = () => <WaveTopBottomLoading />;
-
 const LandingCard = styled.div`
   padding: 1em;
   background-color: white;
@@ -41,7 +40,7 @@ function App({ match }) {
   return (
     <>
       <Fade show={show}>
-        {show === true ? (
+        {show === true ?
           <Layout>
             <Landing>
               <h1>The Collector</h1>
@@ -54,9 +53,7 @@ function App({ match }) {
               <h3>Collect art from international museums.</h3>
             </Landing>
           </Layout>
-        ) : (
-          <Container />
-        )}
+        : <Container />}
       </Fade>
     </>
   );
